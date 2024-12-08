@@ -136,16 +136,15 @@ if (!empty($equipes_inscritas)) {
                     <ul class="dropdown-content">
                         <li><a href="buscajogador.php">Busca de jogadores</a></li>
                         <li><a href="equipes.php">Equipes</a></li>
-                        <li><a href="campeonatos.php">Torneios</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#">Torneios</a>
+                    <a href="#">Campeonatos</a>
                     <ul class="dropdown-content">
-                        <li><a href="campeonatos.php">Lista de Torneios</a></li>
+                        <li><a href="campeonatos.php">Lista de Campeonatos</a></li>
                         <?php if (isset($_SESSION['loggedin'])): ?>
-                            <li><a href="cadastracampeonato.php">Criar Torneio</a></li>
-                            <li><a href="meustorneios.php">Meus Torneios</a></li>
+                            <li><a href="cadastracampeonato.php">Criar Campeonatos</a></li>
+                            <li><a href="meuscampeonatos.php">Meus Campeonatos</a></li>
                         <?php endif; ?>
                     </ul>
                 </li>
@@ -153,7 +152,8 @@ if (!empty($equipes_inscritas)) {
                     <?php if (isset($_SESSION['loggedin'])): ?>
                         <a href="#"> <?php echo $_SESSION['gameName_usuario'] ?></a>
                         <ul class="dropdown-content">
-                            <li><a href="#">Minhas moedas:</a></li>
+                            <li><a href="#">Minhas medalhas: <?php echo $_SESSION['medalhas_usuario'] ?></a></li>
+                            <li><a href="feedback.php">Feedback</a></li>
                             <li><a href="logout.php"> Logout </a></li>
                         </ul>
                     <?php else: ?>

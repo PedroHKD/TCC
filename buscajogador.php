@@ -19,40 +19,39 @@ if (!isset($_SESSION['loggedin'])) {
     <header>
         <h1>Busca de jogadores</h1>
         <nav>
-    <ul>
-        <li><a href="index.php">Inicio</a></li>
-        <li class="dropdown">
-            <a href="#">Menu</a>
-            <ul class="dropdown-content">
-                <li><a href="buscajogador.php">Busca de jogadores</a></li>
-                <li><a href="equipes.php">Equipes</a></li>
-                <li><a href="campeonatos.php">Campeonatos</a></li>
+            <ul>
+                <li><a href="index.php">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#">Menu</a>
+                    <ul class="dropdown-content">
+                        <li><a href="buscajogador.php">Busca de jogadores</a></li>
+                        <li><a href="equipes.php">Equipes</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Campeonatos</a>
+                    <ul class="dropdown-content">
+                        <li><a href="campeonatos.php">Lista de Campeonatos</a></li>
+                        <?php if (isset($_SESSION['loggedin'])): ?>
+                            <li><a href="cadastracampeonato.php">Criar Campeonatos</a></li>
+                            <li><a href="meuscampeonatos.php">Meus Campeonatos</a></li>
+                        <?php endif; ?>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <?php if (isset($_SESSION['loggedin'])): ?>
+                        <a href="#"> <?php echo $_SESSION['gameName_usuario'] ?></a>
+                        <ul class="dropdown-content">
+                            <li><a href="#">Minhas medalhas: <?php echo $_SESSION['medalhas_usuario'] ?></a></li>
+                            <li><a href="feedback.php">Feedback</a></li>
+                            <li><a href="logout.php"> Logout </a></li>
+                        </ul>
+                    <?php else: ?>
+                        <a href="login.php"> Login </a>
+                    <?php endif; ?>
+                </li>
             </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#">Campeonatos</a>
-            <ul class="dropdown-content">
-                <li><a href="campeonatos.php">Lista de Campeonatos</a></li>
-                <?php if (isset($_SESSION['loggedin'])): ?>
-                    <li><a href="cadastracampeonato.php">Criar Campeonatos</a></li>
-                    <li><a href="meuscampeonatos.php">Meus Campeonatos</a></li>
-                <?php endif; ?>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <?php if (isset($_SESSION['loggedin'])): ?>
-                <a href="#"> <?php echo $_SESSION['gameName_usuario'] ?></a>
-                <ul class="dropdown-content">
-                    <li><a href="#">Minhas moedas:</a></li>
-                    <li><a href="feedback.php">Feedback</a></li>
-                    <li><a href="logout.php"> Logout </a></li>
-                </ul>
-            <?php else: ?>
-                <a href="login.php"> Login </a>
-            <?php endif; ?>
-        </li>
-    </ul>
-</nav>
+        </nav>
     </header>
     <main class="busca-container">
         <div class="search-bar-container">

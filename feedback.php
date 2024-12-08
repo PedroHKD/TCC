@@ -52,7 +52,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <ul class="dropdown-content">
                         <li><a href="buscajogador.php">Busca de jogadores</a></li>
                         <li><a href="equipes.php">Equipes</a></li>
-                        <li><a href="campeonatos.php">Campeonatos</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -69,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <?php if (isset($_SESSION['loggedin'])): ?>
                         <a href="#"> <?php echo $_SESSION['gameName_usuario'] ?></a>
                         <ul class="dropdown-content">
-                            <li><a href="#">Minhas moedas:</a></li>
+                            <li><a href="#">Minhas medalhas: <?php echo $_SESSION['medalhas_usuario'] ?></a></li>
                             <li><a href="feedback.php">Feedback</a></li>
                             <li><a href="logout.php"> Logout </a></li>
                         </ul>

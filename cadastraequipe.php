@@ -48,8 +48,8 @@ $membros = $time[0]['membros'] != null ? json_decode($time[0]['membros']) : [];
                     <?php if (isset($_SESSION['loggedin'])): ?>
                         <a href="#"> <?php echo $_SESSION['gameName_usuario'] ?></a>
                         <ul class="dropdown-content">
-                            <li><a href="#">Minhas moedas:</a></li>
-                            <li><a href="feedback.php">Feedback</a></li> 
+                            <li><a href="#">Minhas medalhas: <?php echo $_SESSION['medalhas_usuario'] ?></a></li>
+                            <li><a href="feedback.php">Feedback</a></li>
                             <li><a href="logout.php"> Logout </a></li>
                         </ul>
                     <?php else: ?>
