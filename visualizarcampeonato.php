@@ -100,10 +100,10 @@ $is_organizador = isset($_SESSION['loggedin']) &&
                         ?>
                             <div class="match">
                                 <?php if ($match): ?>
-                                    <div class="team <?= $match['vencedor'] === $match['equipe1']['cd_equipe'] ? 'winner' : '' ?>">
+                                    <div class="team <?= isset($match['vencedor']) && $match['vencedor'] === $match['equipe1']['cd_equipe'] ? 'winner' : '' ?>">
                                         <?= htmlspecialchars($match['equipe1']['nome']) ?>
                                     </div>
-                                    <div class="team <?= $match['vencedor'] === $match['equipe2']['cd_equipe'] ? 'winner' : '' ?>">
+                                    <div class="team <?= isset($match['vencedor']) && $match['vencedor'] === $match['equipe2']['cd_equipe'] ? 'winner' : '' ?>">
                                         <?= htmlspecialchars($match['equipe2']['nome']) ?>
                                     </div>
                                     <?php if ($is_organizador && !isset($match['vencedor'])): ?>
