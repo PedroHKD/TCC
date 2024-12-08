@@ -34,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $_SESSION['gameName_usuario'] = $row['gameName_usuario'];
                 $_SESSION['tagLine_usuario'] = $row['tagLine_usuario'];
                 $_SESSION['puuid_usuario'] = $row['puuid_usuario'];
+                $_SESSION['medalhas_usuario'] = $row['medalhas_usuario'];
 
                 header("Location: index.php?success=1&success_message=" . urlencode("Login realizado com sucesso!"));
             } else {
