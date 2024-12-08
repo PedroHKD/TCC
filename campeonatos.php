@@ -40,7 +40,6 @@ $campeonatos = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <ul class="dropdown-content">
                         <li><a href="buscajogador.php">Busca de jogadores</a></li>
                         <li><a href="equipes.php">Equipes</a></li>
-                        <li><a href="campeonatos.php">Campeonatos</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -49,7 +48,7 @@ $campeonatos = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <li><a href="campeonatos.php">Lista de Campeonatos</a></li>
                         <?php if (isset($_SESSION['loggedin'])): ?>
                             <li><a href="cadastracampeonato.php">Criar Campeonatos</a></li>
-                            <li><a href="meustorneios.php">Meus Campeonatos</a></li>
+                            <li><a href="meuscampeonatos.php">Meus Campeonatos</a></li>
                         <?php endif; ?>
                     </ul>
                 </li>
@@ -57,7 +56,7 @@ $campeonatos = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <?php if (isset($_SESSION['loggedin'])): ?>
                         <a href="#"> <?php echo $_SESSION['gameName_usuario'] ?></a>
                         <ul class="dropdown-content">
-                            <li><a href="#">Minhas moedas:</a></li>
+                            <li><a href="#">Minhas medalhas: <?php echo $_SESSION['medalhas_usuario'] ?></a></li>
                             <li><a href="feedback.php">Feedback</a></li>
                             <li><a href="logout.php"> Logout </a></li>
                         </ul>
