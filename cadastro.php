@@ -7,7 +7,7 @@ include "api.php";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $username = filter_var($_POST['signup-username'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $username = $_POST['signup-username'];
     $password_usuario = filter_var($_POST['signup-password'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $confirm_password = filter_var($_POST['signup-confirm-password'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $email = filter_var($_POST['signup-email'], FILTER_SANITIZE_EMAIL);
