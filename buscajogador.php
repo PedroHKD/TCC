@@ -62,7 +62,7 @@ if (!isset($_SESSION['loggedin'])) {
         </div>
         <?php
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $riotID = filter_var($_POST['riotID'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+            $riotID = $_POST['riotID'];
             if (validaRiotID($riotID) == false) {
                 header("Location: buscajogador.php?error=" . urlencode("RIOT ID inválido"));
                 exit();
